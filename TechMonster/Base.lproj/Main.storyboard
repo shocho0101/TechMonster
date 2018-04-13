@@ -1,24 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="misaki_gothic.ttf">
+            <string>MisakiGothic</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Lobby View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LobbyViewController" customModule="TechMonster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OaZ-Bt-hLL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lobby.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xei-YR-ijB">
+                                <rect key="frame" x="0.0" y="70" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xei-YR-ijB" secondAttribute="height" multiplier="1:1" id="nVU-HZ-3N9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="yusya.png" translatesAutoresizingMaskIntoConstraints="NO" id="FCB-5m-0EE">
+                                <rect key="frame" x="20" y="137" width="335" height="236"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6R-ay-6mi">
+                                <rect key="frame" x="20" y="100" width="34" height="17"/>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv. 99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hax-25-6Kb">
+                                <rect key="frame" x="304" y="100" width="51" height="17"/>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hQ3-5R-OR7">
+                                <rect key="frame" x="46" y="418" width="283" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="スタミナ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tj0-cN-0z9">
+                                <rect key="frame" x="46" y="393" width="68" height="17"/>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZP-oY-2Ot">
+                                <rect key="frame" x="60" y="515" width="255" height="82"/>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <state key="normal" title="冒険に行く" backgroundImage="gold_button.png">
+                                    <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stertBattle" destination="BYZ-38-t0r" eventType="touchUpInside" id="eNK-Ly-gE3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Tj0-cN-0z9" firstAttribute="top" secondItem="FCB-5m-0EE" secondAttribute="bottom" constant="20" id="0Dd-xM-wky"/>
+                            <constraint firstItem="FCB-5m-0EE" firstAttribute="top" secondItem="z6R-ay-6mi" secondAttribute="bottom" constant="20" id="0i3-DS-taV"/>
+                            <constraint firstItem="hQ3-5R-OR7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="0tq-Pb-7wk"/>
+                            <constraint firstItem="z6R-ay-6mi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5eH-Cw-kh7"/>
+                            <constraint firstItem="Xei-YR-ijB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Ig4-s8-r4a"/>
+                            <constraint firstItem="UZP-oY-2Ot" firstAttribute="top" secondItem="Xei-YR-ijB" secondAttribute="bottom" constant="70" id="IgE-EJ-615"/>
+                            <constraint firstItem="Xei-YR-ijB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mpc-Ut-Fh0"/>
+                            <constraint firstItem="hQ3-5R-OR7" firstAttribute="leading" secondItem="Tj0-cN-0z9" secondAttribute="leading" id="NbS-kv-jH5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FCB-5m-0EE" secondAttribute="trailing" constant="20" id="QxG-ew-vse"/>
+                            <constraint firstItem="hax-25-6Kb" firstAttribute="top" secondItem="Xei-YR-ijB" secondAttribute="top" constant="30" id="SQu-Vd-JSV"/>
+                            <constraint firstItem="Xei-YR-ijB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SeX-8j-ALs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UZP-oY-2Ot" secondAttribute="bottom" constant="70" id="TGF-DH-weA"/>
+                            <constraint firstItem="OaZ-Bt-hLL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bZK-7L-O2r"/>
+                            <constraint firstItem="Xei-YR-ijB" firstAttribute="bottom" secondItem="hQ3-5R-OR7" secondAttribute="bottom" constant="25" id="bcj-Dw-Qd3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hQ3-5R-OR7" secondAttribute="trailing" constant="30" id="dTP-5w-zr6"/>
+                            <constraint firstItem="FCB-5m-0EE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eMS-XQ-dj0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UZP-oY-2Ot" secondAttribute="trailing" constant="60" id="ejL-jF-fnV"/>
+                            <constraint firstItem="hQ3-5R-OR7" firstAttribute="top" secondItem="Tj0-cN-0z9" secondAttribute="bottom" constant="8" id="fiC-Mc-FED"/>
+                            <constraint firstItem="OaZ-Bt-hLL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="glb-Ua-aXK"/>
+                            <constraint firstItem="z6R-ay-6mi" firstAttribute="top" secondItem="Xei-YR-ijB" secondAttribute="top" constant="30" id="h4F-d2-FVa"/>
+                            <constraint firstItem="OaZ-Bt-hLL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hhx-YL-Ugt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hax-25-6Kb" secondAttribute="trailing" constant="20" id="jPa-mQ-wSu"/>
+                            <constraint firstItem="OaZ-Bt-hLL" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="tzu-do-gm7"/>
+                            <constraint firstItem="UZP-oY-2Ot" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="zIw-Dl-tqC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="levelLabel" destination="hax-25-6Kb" id="3XL-Qk-Slg"/>
+                        <outlet property="nameLabel" destination="z6R-ay-6mi" id="hfN-An-Nqe"/>
+                        <outlet property="staminaBar" destination="hQ3-5R-OR7" id="ZNR-Ua-joL"/>
+                        <segue destination="JcL-nk-b9m" kind="modal" identifier="startBattle" modalTransitionStyle="crossDissolve" id="rA9-Kd-Kbk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Battle View Controller-->
+        <scene sceneID="3fO-Cs-qfv">
+            <objects>
+                <viewController id="JcL-nk-b9m" customClass="BattleViewController" customModule="TechMonster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZCy-jt-d8N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TDQ-jD-1cb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="battlebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="VkD-7g-nmt">
+                                <rect key="frame" x="0.0" y="70" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VkD-7g-nmt" secondAttribute="height" multiplier="1:1" id="KhS-AF-Q51"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yusya.png" translatesAutoresizingMaskIntoConstraints="NO" id="K3M-lt-f8F">
+                                <rect key="frame" x="20" y="307.5" width="117.5" height="117.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="K3M-lt-f8F" secondAttribute="height" multiplier="1:1" id="TGr-JB-NWY"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ywh-wG-aIB">
+                                <rect key="frame" x="237.5" y="90" width="117.5" height="117.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ywh-wG-aIB" secondAttribute="height" multiplier="1:1" id="Xtk-Qt-yZK"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D89-m7-A0w">
+                                <rect key="frame" x="149.5" y="413" width="209.5" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqc-7A-1P8">
+                                <rect key="frame" x="149" y="388" width="34" height="17"/>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GH-Wm-lNc">
+                                <rect key="frame" x="20" y="100" width="34" height="17"/>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P78-1L-QOp">
+                                <rect key="frame" x="20" y="125" width="205.5" height="2"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3o-cc-FP1">
+                                <rect key="frame" x="60" y="515" width="255" height="82"/>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <state key="normal" title="こうげき" backgroundImage="gold_button.png">
+                                    <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playerAttack" destination="JcL-nk-b9m" eventType="touchUpInside" id="Fvx-SS-Dh5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0GH-Wm-lNc" firstAttribute="leading" secondItem="b0x-30-PDE" secondAttribute="leading" constant="20" id="1Sb-Y5-xZh"/>
+                            <constraint firstItem="K3M-lt-f8F" firstAttribute="leading" secondItem="b0x-30-PDE" secondAttribute="leading" constant="20" id="3Ni-eZ-zfK"/>
+                            <constraint firstItem="TDQ-jD-1cb" firstAttribute="trailing" secondItem="b0x-30-PDE" secondAttribute="trailing" id="7Zh-rE-ioD"/>
+                            <constraint firstItem="P78-1L-QOp" firstAttribute="leading" secondItem="0GH-Wm-lNc" secondAttribute="leading" id="95b-c5-jxs"/>
+                            <constraint firstItem="TDQ-jD-1cb" firstAttribute="top" secondItem="ZCy-jt-d8N" secondAttribute="top" id="A6l-qa-Ygt"/>
+                            <constraint firstItem="VkD-7g-nmt" firstAttribute="bottom" secondItem="D89-m7-A0w" secondAttribute="bottom" constant="30" id="Bj7-Hv-mEJ"/>
+                            <constraint firstItem="D89-m7-A0w" firstAttribute="leading" secondItem="K3M-lt-f8F" secondAttribute="trailingMargin" constant="20" id="DSE-T1-l0f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D89-m7-A0w" secondAttribute="trailing" id="EGi-1F-isM"/>
+                            <constraint firstItem="D89-m7-A0w" firstAttribute="top" secondItem="aqc-7A-1P8" secondAttribute="bottom" constant="8" id="Eoc-kd-9Vg"/>
+                            <constraint firstItem="VkD-7g-nmt" firstAttribute="bottom" secondItem="K3M-lt-f8F" secondAttribute="bottom" constant="20" id="FRm-nk-taX"/>
+                            <constraint firstItem="b0x-30-PDE" firstAttribute="bottom" secondItem="x3o-cc-FP1" secondAttribute="bottom" constant="70" id="JeJ-rC-oQg"/>
+                            <constraint firstItem="D89-m7-A0w" firstAttribute="leading" secondItem="aqc-7A-1P8" secondAttribute="leading" id="K2L-qG-OpY"/>
+                            <constraint firstItem="VkD-7g-nmt" firstAttribute="leading" secondItem="b0x-30-PDE" secondAttribute="leading" id="Kkb-3F-F3v"/>
+                            <constraint firstItem="K3M-lt-f8F" firstAttribute="width" secondItem="Ywh-wG-aIB" secondAttribute="width" id="NIt-rK-IHW"/>
+                            <constraint firstItem="VkD-7g-nmt" firstAttribute="trailing" secondItem="b0x-30-PDE" secondAttribute="trailing" id="O74-OW-C8z"/>
+                            <constraint firstItem="K3M-lt-f8F" firstAttribute="top" secondItem="Ywh-wG-aIB" secondAttribute="bottom" constant="100" id="OXR-vr-EGk"/>
+                            <constraint firstItem="VkD-7g-nmt" firstAttribute="top" secondItem="b0x-30-PDE" secondAttribute="top" constant="50" id="S2H-Md-rm1"/>
+                            <constraint firstItem="TDQ-jD-1cb" firstAttribute="bottom" secondItem="ZCy-jt-d8N" secondAttribute="bottom" id="Wto-wQ-yNF"/>
+                            <constraint firstItem="Ywh-wG-aIB" firstAttribute="leadingMargin" secondItem="P78-1L-QOp" secondAttribute="trailing" constant="20" id="aWh-7r-ZHc"/>
+                            <constraint firstItem="0GH-Wm-lNc" firstAttribute="top" secondItem="VkD-7g-nmt" secondAttribute="top" constant="30" id="fB1-Aj-Cq0"/>
+                            <constraint firstItem="b0x-30-PDE" firstAttribute="trailing" secondItem="Ywh-wG-aIB" secondAttribute="trailing" constant="20" id="iLF-Nl-xmw"/>
+                            <constraint firstItem="b0x-30-PDE" firstAttribute="bottom" secondItem="VkD-7g-nmt" secondAttribute="bottom" constant="222" id="peJ-XG-e94"/>
+                            <constraint firstItem="VkD-7g-nmt" firstAttribute="trailing" secondItem="b0x-30-PDE" secondAttribute="trailing" id="rEZ-iz-Ym4"/>
+                            <constraint firstItem="P78-1L-QOp" firstAttribute="top" secondItem="0GH-Wm-lNc" secondAttribute="bottom" constant="8" id="rSr-VT-2cK"/>
+                            <constraint firstItem="x3o-cc-FP1" firstAttribute="top" secondItem="VkD-7g-nmt" secondAttribute="bottom" constant="70" id="sqF-Iq-zJ0"/>
+                            <constraint firstItem="b0x-30-PDE" firstAttribute="trailing" secondItem="x3o-cc-FP1" secondAttribute="trailing" constant="60" id="su0-67-BRs"/>
+                            <constraint firstItem="x3o-cc-FP1" firstAttribute="leading" secondItem="b0x-30-PDE" secondAttribute="leading" constant="60" id="w1y-Ks-quS"/>
+                            <constraint firstItem="TDQ-jD-1cb" firstAttribute="leading" secondItem="b0x-30-PDE" secondAttribute="leading" id="wSa-ma-NOM"/>
+                            <constraint firstItem="Ywh-wG-aIB" firstAttribute="top" secondItem="VkD-7g-nmt" secondAttribute="top" constant="20" id="yBN-q8-YzU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b0x-30-PDE"/>
+                    </view>
+                    <connections>
+                        <outlet property="attackButton" destination="x3o-cc-FP1" id="XwQ-Ya-DqM"/>
+                        <outlet property="backgroundImageView" destination="VkD-7g-nmt" id="6Dy-eO-aq3"/>
+                        <outlet property="enemyHPBar" destination="P78-1L-QOp" id="gTd-D5-m8h"/>
+                        <outlet property="enemyImageView" destination="Ywh-wG-aIB" id="sdP-Eg-2FH"/>
+                        <outlet property="enemyNameLabel" destination="0GH-Wm-lNc" id="mes-IK-eCG"/>
+                        <outlet property="playerHPBar" destination="D89-m7-A0w" id="g96-Rp-AMA"/>
+                        <outlet property="playerImageView" destination="K3M-lt-f8F" id="HfK-bB-QwJ"/>
+                        <outlet property="playerNameLabel" destination="aqc-7A-1P8" id="6A1-eW-83E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Xu-zs-gXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832.79999999999995" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="battlebg.png" width="320" height="160"/>
+        <image name="bgimage.jpg" width="1280" height="960"/>
+        <image name="gold_button.png" width="800" height="245"/>
+        <image name="lobby.png" width="500" height="400"/>
+        <image name="monster.png" width="88" height="120"/>
+        <image name="yusya.png" width="56" height="56"/>
+    </resources>
 </document>
